@@ -106,15 +106,7 @@ Before running, update the following lines in the script for your own system:
 
 ## Usage
 
-1. Ensure the folder structure matches the relative paths in the script, or edit the paths directly. A typical layout:
-   \```
-   project/
-   ├── 1u19_popc_wi.psf
-   ├── md.dcd
-   └── analysis/
-       └── hole_radius/
-           └── hole_radius_analysis.py   <- this script, run from here
-   \```
+1. Ensure the folder structure matches the relative paths in the script, or edit the paths directly. 
 2. Activate the Python environment with the required packages installed.
 3. Run the script:
    \```bash
@@ -217,16 +209,6 @@ plt.savefig('pore_radius_3d.png', dpi=300)
 - **HOLE fails on specific frames:** This is often caused by an unsuitable `select=` atom group (e.g. atoms far outside the pore, or too few atoms to define the pore lining). Try using a more targeted selection such as pore-lining residues (`resid ... and name CA`) instead of a broad index range.
 - **Errors related to `CONECT` records or `CRYST1`/box dimensions:** These are exactly what Fix 1 and Fix 2 address — make sure both patches remain active if you see these errors.
 - **Long runtime:** HOLE is called once per frame; consider analyzing every Nth frame of the trajectory for exploratory analysis before committing to the full trajectory.
-
----
-
-## Citing HOLE / MDAnalysis
-
-If you use this script or its outputs in a publication, please cite:
-
-- Smart, O. S., Neduvelil, J. G., Wang, X., Wallace, B. A., & Sansom, M. S. P. (1996). HOLE: A program for the analysis of the pore dimensions of ion channel structural models. *Journal of Molecular Graphics*, 14(6), 354–360.
-- Michaud-Agrawal, N., Denning, E. J., Woolf, T. B., & Beckstein, O. (2011). MDAnalysis: A toolkit for the analysis of molecular dynamics simulations. *Journal of Computational Chemistry*, 32(10), 2319–2327.
-- Gowers, R. J. et al. (2016). MDAnalysis: A Python package for the rapid analysis of molecular dynamics simulations. *Proceedings of the 15th Python in Science Conference*, 98–105.
 
 ---
 
