@@ -12,7 +12,7 @@ import MDAnalysis.coordinates.PDB as PDBmod
 warnings.filterwarnings('ignore')
 
 # Load trajectory
-u = mda.Universe('../../1u19_popc_wi.psf', '../md.dcd')   # Mention you input files here 
+u = mda.Universe('../../1u19_popc_wi.psf', '../md.dcd')   # Mention you input files here; Topology file first and then your trajectory file
 
 # Fix 1: Remove bond information to prevent CONECT record indexing error
 u._topology.bonds = Bonds([])
